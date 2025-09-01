@@ -3,22 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Cheers - Digital Certification Systems Developer</title>
+    <title>Michael Cheers - Software Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Michael Cheers</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <header class="hero">
         <div class="hero-content">
             <h1>Michael Cheers</h1>
-            <p class="hero-subtitle">Secure Digital Certification Systems for Professional Associations</p>
-            <p class="hero-description">I build enterprise-grade digital signature and document verification platforms that help professional organizations modernize their certification processes while maintaining the highest security standards.</p>
+            <p class="hero-subtitle">Software Developer</p>
+            <p class="hero-description">I build secure, scalable applications that solve real-world problems. Specializing in enterprise software, digital security systems, and full-stack web development.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="case-study" class="section">
+        <section id="about" class="section">
             <div class="container">
-                <h2>Featured Project: Digital Stamp System</h2>
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>I'm a software developer with a passion for building secure, enterprise-level applications. My experience spans from digital security systems to full-stack web development, with a focus on creating solutions that are both technically robust and user-friendly.</p>
+                    
+                    <p>I enjoy tackling complex problems, especially those involving security, compliance, and scalable architecture. My goal is always to deliver software that not only meets requirements but exceeds expectations in terms of performance and reliability.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section section-alt">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                
+                <div class="project-card featured">
+                    <h3>Digital Stamp System for Professional Associations</h3>
                 
                 <div class="project-overview">
                     <div class="project-stats">
@@ -94,7 +127,7 @@
                 <div class="results">
                     <h3>Results & Impact</h3>
                     <ul>
-                        <li><strong>Successfully deployed</strong> for STIBC (Society of Translators and Interpreters of British Columbia) and ATIO</li>
+                        <li><strong>Successfully deployed</strong> for STIBC (Society of Translators and Interpreters of British Columbia) and ATIO (Association of Translators and Interpreters of Ontario)</li>
                         <li><strong>Streamlined certification process</strong> for hundreds of professional translators</li>
                         <li><strong>Eliminated paper-based workflows</strong> while maintaining legal compliance</li>
                         <li><strong>Provided real-time verification</strong> for document authenticity</li>
@@ -102,62 +135,72 @@
                     </ul>
                 </div>
             </div>
-        </section>
-
-        <section id="services" class="section section-alt">
-            <div class="container">
-                <h2>Services for Professional Associations</h2>
-                <div class="services-grid">
-                    <div class="service">
-                        <h3>Digital Certification Systems</h3>
-                        <p>Custom-built platforms for member certification, document authentication, and compliance management tailored to your organization's specific requirements.</p>
-                    </div>
-                    <div class="service">
-                        <h3>Security & Compliance</h3>
-                        <p>Implementation of industry-standard security protocols including PKI infrastructure, digital certificates, and regulatory compliance frameworks.</p>
-                    </div>
-                    <div class="service">
-                        <h3>Document Verification</h3>
-                        <p>Real-time document verification systems that allow third parties to instantly validate the authenticity of certified documents.</p>
-                    </div>
-                    <div class="service">
-                        <h3>System Integration</h3>
-                        <p>Seamless integration with existing membership management systems, databases, and workflow processes.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Future Projects</h3>
+                    <p class="project-description">More projects coming soon! I'm always working on new challenges and expanding my portfolio with diverse applications.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Full-Stack Development</span>
+                        <span class="tech-tag">API Design</span>
+                        <span class="tech-tag">Database Architecture</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section">
+        <section id="skills" class="section">
             <div class="container">
-                <h2>About</h2>
-                <div class="about-content">
-                    <p>I specialize in building secure, compliant digital systems for professional organizations. My expertise lies in understanding both the technical complexity of digital security standards and the unique operational needs of professional associations.</p>
-                    
-                    <p>With proven experience deploying enterprise-level certification systems, I help organizations modernize their processes while maintaining the trust and security their members depend on.</p>
-
-                    <div class="expertise">
-                        <h3>Core Expertise</h3>
-                        <div class="expertise-tags">
-                            <span class="tag">Digital Signatures</span>
-                            <span class="tag">PKI Infrastructure</span>
-                            <span class="tag">Document Security</span>
-                            <span class="tag">.NET Development</span>
-                            <span class="tag">Cloud Deployment</span>
-                            <span class="tag">Compliance Systems</span>
-                            <span class="tag">Database Design</span>
-                            <span class="tag">API Development</span>
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Backend Development</h3>
+                        <div class="skills-list">
+                            <span class="skill">.NET Core</span>
+                            <span class="skill">C#</span>
+                            <span class="skill">Entity Framework</span>
+                            <span class="skill">Web APIs</span>
+                            <span class="skill">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Security & Compliance</h3>
+                        <div class="skills-list">
+                            <span class="skill">Digital Signatures</span>
+                            <span class="skill">PKI Infrastructure</span>
+                            <span class="skill">X.509 Certificates</span>
+                            <span class="skill">SSL/TLS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>DevOps & Cloud</h3>
+                        <div class="skills-list">
+                            <span class="skill">Docker</span>
+                            <span class="skill">AWS EC2</span>
+                            <span class="skill">CI/CD</span>
+                            <span class="skill">Linux</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frontend & Tools</h3>
+                        <div class="skills-list">
+                            <span class="skill">HTML/CSS</span>
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">Git</span>
+                            <span class="skill">Visual Studio</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        </section>
+
         <section id="contact" class="section section-alt">
             <div class="container">
                 <h2>Get In Touch</h2>
                 <div class="contact-content">
-                    <p>Ready to modernize your organization's certification process? Let's discuss how a custom digital certification system can benefit your association.</p>
+                    <p>Interested in working together? I'm always open to discussing new projects and opportunities.</p>
                     
                     <div class="contact-info">
                         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/michael-cheers-531068273/" target="_blank">Michael Cheers</a></p>
