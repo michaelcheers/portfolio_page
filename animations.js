@@ -40,30 +40,56 @@ function initializeAnimations() {
 
 // Simple hero animation without typing
 function initSimpleHero() {
-    const heroTitle = document.querySelector('.hero h1');
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-    const heroDescription = document.querySelector('.hero-description');
-    const heroCTA = document.querySelector('.hero-cta');
+    const heroElements = document.querySelectorAll('.hero h1, .hero-subtitle, .hero-description, .hero-cta');
     
-    gsap.fromTo([heroTitle, heroSubtitle, heroDescription, heroCTA], 
-        { 
-            opacity: 0, 
-            y: 30 
-        },
+    // Initial animation on page load
+    gsap.fromTo(heroElements, 
+        { opacity: 0, y: 30 },
         { 
             opacity: 1, 
             y: 0, 
             duration: 1,
             stagger: 0.2,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: '.hero',
-                start: "top bottom",
-                end: "bottom top",
-                toggleActions: "play none none reverse"
-            }
+            ease: "power2.out"
         }
     );
+    
+    // Re-animation when scrolling back to top
+    ScrollTrigger.create({
+        trigger: '.hero',
+        start: "top bottom",
+        end: "bottom top",
+        onEnter: () => {
+            gsap.fromTo(heroElements, 
+                { opacity: 0, y: 30 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: "power2.out"
+                }
+            );
+        },
+        onLeave: () => {
+            gsap.to(heroElements, { opacity: 0, y: -30, duration: 0.5, stagger: 0.1 });
+        },
+        onEnterBack: () => {
+            gsap.fromTo(heroElements, 
+                { opacity: 0, y: 30 },
+                { 
+                    opacity: 1, 
+                    y: 0, 
+                    duration: 1,
+                    stagger: 0.2,
+                    ease: "power2.out"
+                }
+            );
+        },
+        onLeaveBack: () => {
+            gsap.to(heroElements, { opacity: 0, y: 30, duration: 0.5, stagger: 0.1 });
+        }
+    });
 }
 
 // Hero typing animation
