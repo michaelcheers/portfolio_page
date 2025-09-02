@@ -216,6 +216,32 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project-image {
+    margin: 24px 0 32px;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.project-image a {
+    display: block;
+    cursor: pointer;
+}
+
+.project-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.02);
+}
+
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 40px rgba(0,0,0,0.15);
