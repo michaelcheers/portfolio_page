@@ -45,49 +45,34 @@ function initializeAnimations() {
 function initSimpleHero() {
     const heroElements = document.querySelectorAll('.hero h1, .hero-subtitle, .hero-description, .hero-cta');
     
-    // Initial animation on page load
-    gsap.fromTo(heroElements, 
-        { opacity: 0, y: 30 },
-        { 
-            opacity: 1, 
-            y: 0, 
-            duration: 1,
-            stagger: 0.2,
-            ease: "power2.out"
-        }
-    );
+    // Set initial state
+    gsap.set(heroElements, { opacity: 0, y: 30 });
     
-    // Re-animation when scrolling back to top
+    // ScrollTrigger-based animation (also handles initial page load)
     ScrollTrigger.create({
         trigger: '.hero',
         start: "top bottom",
         end: "bottom top",
         onEnter: () => {
-            gsap.fromTo(heroElements, 
-                { opacity: 0, y: 30 },
-                { 
-                    opacity: 1, 
-                    y: 0, 
-                    duration: 1,
-                    stagger: 0.2,
-                    ease: "power2.out"
-                }
-            );
+            gsap.to(heroElements, { 
+                opacity: 1, 
+                y: 0, 
+                duration: 1,
+                stagger: 0.2,
+                ease: "power2.out"
+            });
         },
         onLeave: () => {
             gsap.to(heroElements, { opacity: 0, y: -30, duration: 0.5, stagger: 0.1 });
         },
         onEnterBack: () => {
-            gsap.fromTo(heroElements, 
-                { opacity: 0, y: 30 },
-                { 
-                    opacity: 1, 
-                    y: 0, 
-                    duration: 1,
-                    stagger: 0.2,
-                    ease: "power2.out"
-                }
-            );
+            gsap.to(heroElements, { 
+                opacity: 1, 
+                y: 0, 
+                duration: 1,
+                stagger: 0.2,
+                ease: "power2.out"
+            });
         },
         onLeaveBack: () => {
             gsap.to(heroElements, { opacity: 0, y: 30, duration: 0.5, stagger: 0.1 });
