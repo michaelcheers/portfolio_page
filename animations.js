@@ -361,28 +361,71 @@ function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('.section');
     
-    // Create scroll spy effect
-    ScrollTrigger.batch(sections, {
-        onEnter: (elements) => {
-            const id = elements[0].id;
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === `#${id}`) {
-                    gsap.to(link, {
-                        color: "#3b82f6",
-                        scale: 1.1,
-                        duration: 0.3
-                    });
-                } else {
-                    gsap.to(link, {
+    // Create scroll spy effect for each section
+    sections.forEach(section => {
+        ScrollTrigger.create({
+            trigger: section,
+            start: "top 60%",
+            end: "bottom 40%",
+            onEnter: () => {
+                const id = section.id;
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${id}`) {
+                        gsap.to(link, {
+                            color: "#3b82f6",
+                            scale: 1.1,
+                            duration: 0.3
+                        });
+                    } else {
+                        gsap.to(link, {
+                            color: "#4b5563",
+                            scale: 1,
+                            duration: 0.3
+                        });
+                    }
+                });
+            },
+            onLeave: () => {
+                const id = section.id;
+                const currentLink = Array.from(navLinks).find(link => link.getAttribute('href') === `#${id}`);
+                if (currentLink) {
+                    gsap.to(currentLink, {
                         color: "#4b5563",
                         scale: 1,
                         duration: 0.3
                     });
                 }
-            });
-        },
-        start: "top 50%",
-        end: "bottom 50%"
+            },
+            onEnterBack: () => {
+                const id = section.id;
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${id}`) {
+                        gsap.to(link, {
+                            color: "#3b82f6",
+                            scale: 1.1,
+                            duration: 0.3
+                        });
+                    } else {
+                        gsap.to(link, {
+                            color: "#4b5563",
+                            scale: 1,
+                            duration: 0.3
+                        });
+                    }
+                });
+            },
+            onLeaveBack: () => {
+                const id = section.id;
+                const currentLink = Array.from(navLinks).find(link => link.getAttribute('href') === `#${id}`);
+                if (currentLink) {
+                    gsap.to(currentLink, {
+                        color: "#4b5563",
+                        scale: 1,
+                        duration: 0.3
+                    });
+                }
+            }
+        });
     });
     
     // Add click animations to nav links
