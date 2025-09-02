@@ -44,6 +44,22 @@
             font-size: 0.95rem;
         }
         
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        @media print {
+            .contact-info a {
+                color: #333;
+                text-decoration: none;
+            }
+        }
+        
         .section {
             margin-bottom: 30px;
         }
@@ -131,7 +147,7 @@
         <h1>Michael Cheers</h1>
         <p>Software Developer</p>
         <div class="contact-info">
-            LinkedIn: linkedin.com/in/michael-cheers-531068273 • GitHub: github.com/michaelcheers
+            LinkedIn: <a href="https://linkedin.com/in/michael-cheers-531068273" target="_blank">linkedin.com/in/michael-cheers-531068273</a> • GitHub: <a href="https://github.com/michaelcheers" target="_blank">github.com/michaelcheers</a> • Portfolio: <a href="https://michaelcheers.github.io/portfolio_page/" target="_blank">michaelcheers.github.io/portfolio_page</a>
         </div>
     </div>
     
