@@ -36,6 +36,9 @@ function initializeAnimations() {
     
     // Micro-interactions
     initMicroInteractions();
+    
+    // Contact form
+    initContactForm();
 }
 
 // Simple hero animation without typing
@@ -600,6 +603,75 @@ function initMicroInteractions() {
 // Utility function for random animations
 function randomBetween(min, max) {
     return Math.random() * (max - min) + min;
+}
+
+// Contact form handling
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = form.querySelector('.btn-submit');
+    const statusDiv = document.getElementById('form-status');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Disable submit button
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        // Clear previous status
+        statusDiv.className = 'form-status';
+        statusDiv.textContent = '';
+        
+        // Collect form data
+        const formData = {
+            name: form.name.value.trim(),
+            email: form.email.value.trim(),
+            phone: form.phone.value.trim(),
+            reason: form.reason.value,
+            message: form.message.value.trim()
+        };
+        
+        // Basic validation
+        if (!formData.name || !formData.email || !formData.reason) {
+            showStatus('error', 'Please fill in all required fields.');
+            resetSubmitButton();
+            return;
+        }
+        
+        try {
+            const response = await fetch('https://plugin.supertranslations.com/api/contact?source=portfolio', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok && result.success) {
+                showStatus('success', result.message);
+                form.reset();
+            } else {
+                showStatus('error', result.message || 'An error occurred. Please try again.');
+            }
+        } catch (error) {
+            console.error('Contact form error:', error);
+            showStatus('error', 'An error occurred. Please try again later.');
+        }
+        
+        resetSubmitButton();
+    });
+    
+    function showStatus(type, message) {
+        statusDiv.className = `form-status ${type}`;
+        statusDiv.textContent = message;
+    }
+    
+    function resetSubmitButton() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+    }
 }
 
 // Performance optimization
