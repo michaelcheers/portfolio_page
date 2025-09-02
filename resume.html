@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Cheers - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            font-size: 1.4rem;
+            color: #667eea;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+        }
+        
+        .experience-item h3 {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        
+        .experience-meta {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .experience-item ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .experience-item li {
+            margin-bottom: 5px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category h4 {
+            font-size: 1rem;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .skill-list {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+            
+            body {
+                padding: 0;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">Print/Save as PDF</button>
+    
+    <div class="header">
+        <h1>Michael Cheers</h1>
+        <p>Software Developer</p>
+        <div class="contact-info">
+            LinkedIn: linkedin.com/in/michael-cheers-531068273 • GitHub: github.com/michaelcheers
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Professional Summary</h2>
+        <p>Software developer specializing in secure, enterprise-level applications with expertise in digital certification systems, PKI infrastructure, and full-stack development. Proven track record of delivering complex, compliance-focused solutions for professional organizations.</p>
+    </div>
+    
+    <div class="section">
+        <h2>Experience</h2>
+        
+        <div class="experience-item">
+            <h3>Digital Certification Systems Developer</h3>
+            <div class="experience-meta">Freelance • 2024</div>
+            <ul>
+                <li>Designed and developed secure digital stamp systems for STIBC (Society of Translators and Interpreters of British Columbia) and ATIO (Association of Translators and Interpreters of Ontario)</li>
+                <li>Implemented X.509 digital certificate infrastructure and PDF-A compliant document signing</li>
+                <li>Built comprehensive web applications with member management, document processing, and real-time verification systems</li>
+                <li>Deployed production systems using Docker containers on AWS EC2 with automated certificate management</li>
+                <li>Developed multi-format document support (PDF, DOC, DOCX, JPG, PNG) with secure signature validation</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Key Projects</h2>
+        
+        <div class="experience-item">
+            <h3>SuperSigning - Digital Certification Platform</h3>
+            <div class="experience-meta">Full-Stack Enterprise Application</div>
+            <ul>
+                <li>Built comprehensive .NET Core application with Entity Framework and MySQL database</li>
+                <li>Implemented PKI certificate authority setup and automated SSL/TLS certificate renewal</li>
+                <li>Created document verification system accessible to third parties at verify.stibc.org</li>
+                <li>Developed usage analytics and monitoring systems with detailed reporting capabilities</li>
+                <li>Ensured compliance with professional certification standards and legal requirements</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Technical Skills</h2>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Backend Development</h4>
+                <div class="skill-list">
+                    .NET Core, C#<br>
+                    Entity Framework<br>
+                    Web APIs<br>
+                    MySQL
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h4>Security & Compliance</h4>
+                <div class="skill-list">
+                    Digital Signatures<br>
+                    PKI Infrastructure<br>
+                    X.509 Certificates<br>
+                    SSL/TLS
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h4>DevOps & Cloud</h4>
+                <div class="skill-list">
+                    Docker<br>
+                    AWS EC2<br>
+                    CI/CD<br>
+                    Linux Administration
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h4>Frontend & Tools</h4>
+                <div class="skill-list">
+                    HTML/CSS<br>
+                    JavaScript<br>
+                    Git<br>
+                    Visual Studio
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Successfully deployed enterprise digital certification systems for 2+ professional organizations</li>
+            <li>Built scalable infrastructure supporting hundreds of certified translators</li>
+            <li>Eliminated paper-based certification workflows while maintaining legal compliance</li>
+            <li>Implemented real-time document verification accessible to third parties</li>
+        </ul>
+    </div>
+</body>
+</html>
