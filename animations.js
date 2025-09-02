@@ -389,17 +389,20 @@ function initSmoothScrolling() {
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
             
-            // Animate to target
-            gsap.to(window, {
-                scrollTo: {
-                    y: target,
-                    offsetY: 100
-                },
-                duration: 1,
-                ease: "power2.inOut"
-            });
+            if (target) {
+                // Calculate offset to account for fixed navbar
+                const navHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = target.offsetTop - navHeight - 20;
+                
+                // Smooth scroll to target
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
             
             // Button press effect
             gsap.to(this, {
