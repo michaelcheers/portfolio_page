@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -49,14 +49,58 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Michael Cheers</h1>
-            <p class="hero-subtitle">Software Developer</p>
-            <p class="hero-description">I build secure, scalable applications that solve real-world problems. Specializing in enterprise software, digital security systems, and full-stack web development.</p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn-primary">View My Work</a>
-                <a href="#contact" class="btn-secondary">Get In Touch</a>
+    <header class="dashboard-header">
+        <div class="terminal-window">
+            <div class="terminal-bar">
+                <div class="terminal-controls">
+                    <span class="control close"></span>
+                    <span class="control minimize"></span>
+                    <span class="control maximize"></span>
+                </div>
+                <div class="terminal-title">~/michael-cheers $</div>
+            </div>
+            <div class="terminal-content">
+                <div class="command-line">
+                    <span class="prompt">$ whoami</span>
+                    <div class="output">
+                        <h1>Michael Cheers</h1>
+                        <p class="role">Software Developer & Problem Solver</p>
+                    </div>
+                </div>
+                <div class="command-line">
+                    <span class="prompt">$ cat skills.txt</span>
+                    <div class="output">
+                        <div class="skill-tags">
+                            <span class="tag">.NET Core</span>
+                            <span class="tag">Digital Security</span>
+                            <span class="tag">Enterprise Systems</span>
+                            <span class="tag">X.509 PKI</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-line">
+                    <span class="prompt">$ ls -la projects/</span>
+                    <div class="output live-metrics">
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <span class="file-name">stibc-digital-stamp/</span>
+                                <span class="file-stat">75+ docs/day</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="file-name">dateformat-generator/</span>
+                                <span class="file-stat">#1 Google</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="file-name">movingpapa-website/</span>
+                                <span class="file-stat">3 weeks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-line active">
+                    <span class="prompt">$ ./explore_work.sh</span>
+                    <span class="cursor">_</span>
+                </div>
             </div>
         </div>
     </header>

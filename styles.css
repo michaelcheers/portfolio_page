@@ -73,14 +73,137 @@ body {
     background: rgba(245, 158, 11, 0.15);
 }
 
-/* Hero Section */
-.hero {
-    padding: 140px 0 100px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    color: white;
-    text-align: center;
-    position: relative;
+/* Dashboard Header */
+.dashboard-header {
+    padding: 120px 20px 60px;
+    background: #0f0f23;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminal-window {
+    background: #1a1a2e;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    width: 100%;
     overflow: hidden;
+    border: 1px solid #2d2d4a;
+}
+
+.terminal-bar {
+    background: #2d2d4a;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #3d3d5a;
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control.close { background: #ff5f57; }
+.control.minimize { background: #ffbd2e; }
+.control.maximize { background: #28ca42; }
+
+.terminal-title {
+    color: #8892b0;
+    font-family: 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
+    font-size: 14px;
+}
+
+.terminal-content {
+    padding: 30px;
+    background: #1a1a2e;
+    color: #8cc8ff;
+    font-family: 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
+    line-height: 1.6;
+}
+
+.command-line {
+    margin-bottom: 25px;
+}
+
+.prompt {
+    color: #64ffda;
+    font-weight: 500;
+}
+
+.output {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.output h1 {
+    color: #ccd6f6;
+    font-size: 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+.role {
+    color: #f59e0b;
+    font-size: 1.1rem;
+    margin: 8px 0 0 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.tag {
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.project-stats {
+    margin-top: 10px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 4px 0;
+}
+
+.file-name {
+    color: #8cc8ff;
+}
+
+.file-stat {
+    color: #f59e0b;
+    font-weight: 500;
+}
+
+.command-line.active .cursor {
+    color: #64ffda;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 .hero::before {
