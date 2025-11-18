@@ -539,6 +539,79 @@ body {
     font-size: 1.2rem;
 }
 
+.platform-evolution {
+    margin: 48px 0;
+    padding: 32px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e8f4f8 100%);
+    border-radius: 16px;
+    border: 2px solid #cbd5e1;
+}
+
+.platform-evolution h3 {
+    color: #1a1a2e;
+    margin-bottom: 16px;
+}
+
+.platform-evolution > p {
+    color: #4b5563;
+    margin-bottom: 24px;
+    font-size: 1.05rem;
+}
+
+.evolution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.evolution-category {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.evolution-category h4 {
+    color: #1e40af;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.evolution-category p {
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.evolution-category ul {
+    list-style: none;
+    margin-top: 12px;
+}
+
+.evolution-category li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 24px;
+    color: #4b5563;
+}
+
+.evolution-category li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #1e40af;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .evolution-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .results ul {
     list-style: none;
     margin-top: 24px;
