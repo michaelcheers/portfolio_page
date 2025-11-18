@@ -377,6 +377,60 @@ body {
     transform: scale(1.02);
 }
 
+.project-screenshots {
+    margin: 24px 0 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.screenshot-item {
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.screenshot-item a {
+    display: block;
+    cursor: pointer;
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.screenshot-item img.cropped-stibc {
+    object-position: center 15%;
+}
+
+.screenshot-item img.cropped-atio {
+    object-position: center 20%;
+}
+
+.screenshot-item:hover img {
+    transform: scale(1.02);
+}
+
+.screenshot-caption {
+    padding: 12px;
+    background: #f8f9fa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .project-screenshots {
+        grid-template-columns: 1fr;
+    }
+}
+
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 40px rgba(0,0,0,0.15);
