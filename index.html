@@ -213,6 +213,45 @@
                     </div>
                 </div>
 
+                <div class="platform-evolution">
+                    <h3>Platform Evolution: ATIO Enhancements (2025)</h3>
+                    <p>Building on the success of STIBC, the ATIO deployment introduced several architectural improvements and new features:</p>
+
+                    <div class="evolution-grid">
+                        <div class="evolution-category">
+                            <h4>Enhanced Security Architecture</h4>
+                            <p>Documents bearing the e-stamp are encrypted on your device using AES-256 with Argon2id key derivation before being stored on cloud servers. The encryption key is never sent to our servers. This zero-knowledge architecture means that even the cloud provider cannot access your documents. The only way to decrypt and access a document is by scanning the QR code or entering the verification code, both of which can only be found on the document itself and are never stored on the servers.</p>
+                        </div>
+
+                        <div class="evolution-category">
+                            <h4>QR Code Verification System</h4>
+                            <ul>
+                                <li>18-character verification codes generated for each stamped document</li>
+                                <li>Dual verification methods: PDF upload or verification code entry</li>
+                                <li>QR codes displayed on verification page for easy document retrieval</li>
+                            </ul>
+                        </div>
+
+                        <div class="evolution-category">
+                            <h4>Client-Side Processing</h4>
+                            <ul>
+                                <li>WebAssembly-based image-to-PDF conversion running locally in browser</li>
+                                <li>Eliminates third-party dependencies for image files (JPG, PNG)</li>
+                                <li>Faster processing and enhanced privacy for sensitive documents</li>
+                            </ul>
+                        </div>
+
+                        <div class="evolution-category">
+                            <h4>Streamlined User Experience</h4>
+                            <ul>
+                                <li>Stateless guest architecture with no login required</li>
+                                <li>Custom signature upload and management</li>
+                                <li>Simplified interface optimized for translator workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="results">
                     <h3>Results & Impact</h3>
                     <ul>
