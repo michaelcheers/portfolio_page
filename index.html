@@ -443,42 +443,33 @@
                     <h3>Open Source Security Research</h3>
 
                     <div class="project-overview">
-                        <p class="project-description">Discovered and patched critical security vulnerabilities in widely-used open source PDF library, protecting millions of downloads from cryptographic weaknesses and XML injection attacks.</p>
+                        <p class="project-description">Discovered and reported a stored XSS vulnerability in Trix, Basecamp's popular rich text editor used by Ruby on Rails applications worldwide, resulting in an official security advisory.</p>
 
                         <div class="project-stats">
                             <div class="stat">
-                                <span class="stat-number">2</span>
-                                <span class="stat-label">Vulnerabilities Fixed</span>
+                                <span class="stat-number">GHSA</span>
+                                <span class="stat-label">Advisory Issued</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-number">16.2M+</span>
-                                <span class="stat-label">Downloads Protected</span>
+                                <span class="stat-number">4.6</span>
+                                <span class="stat-label">CVSS Score</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-number">100%</span>
-                                <span class="stat-label">Merged</span>
+                                <span class="stat-number">2.1.16</span>
+                                <span class="stat-label">Patched Version</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="technical-details">
-                        <h4>Vulnerability Discoveries</h4>
+                        <h4>Vulnerability Discovery</h4>
                         <div class="security-findings">
                             <div class="finding">
-                                <h5>🔒 XXE Vulnerability Patch (CVE-2017-9096)</h5>
-                                <p><strong>Background:</strong> <a href="https://nvd.nist.gov/vuln/detail/CVE-2017-9096" target="_blank" rel="noopener noreferrer">CVE-2017-9096</a> affects iText before 5.5.12 and 7.x before 7.0.3. The iTextSharp.LGPLv2.Core fork (based on iTextSharp 4.1.6, equivalent to iText 2.1.7) inherited this vulnerability from the older codebase.</p>
-                                <p><strong>Issue:</strong> XML parsers did not disable external entities, allowing remote attackers to conduct XML External Entity (XXE) attacks via crafted PDFs. This enables arbitrary file reading, SSRF attacks, and denial of service (CVSS 8.8 HIGH).</p>
-                                <p><strong>Fix:</strong> Identified the inherited vulnerability in the fork and patched it by configuring XmlReader with secure settings (DtdProcessing.Prohibit, XmlResolver = null) to disable external entity processing.</p>
-                                <p><strong>Impact:</strong> Protected 16.2M+ downloads from server-side exploitation when processing untrusted PDFs.</p>
-                                <a href="https://github.com/VahidN/iTextSharp.LGPLv2.Core/pull/233" target="_blank" rel="noopener noreferrer">View PR #233 →</a>
-                            </div>
-
-                            <div class="finding">
-                                <h5>🔐 Cryptographic Weakness in IV Generation</h5>
-                                <p><strong>Issue:</strong> IvGenerator class used predictable pseudo-random number generator seeded with DateTime.Now.Ticks for encryption initialization vectors (IVs). Attackers knowing approximate PDF creation time could predict IVs and decrypt content.</p>
-                                <p><strong>Fix:</strong> Replaced RC4-based PRNG with .NET's cryptographically secure RandomNumberGenerator, ensuring truly random, unpredictable IVs and preventing chosen plaintext attacks.</p>
-                                <p><strong>Impact:</strong> Secured PDF encryption for 16.2M+ downloads.</p>
-                                <a href="https://github.com/VahidN/iTextSharp.LGPLv2.Core/pull/234" target="_blank" rel="noopener noreferrer">View PR #234 →</a>
+                                <h5>🔒 Stored XSS via Attachment Attributes (GHSA-g9jg-w8vm-g96v)</h5>
+                                <p><strong>Project:</strong> <a href="https://github.com/basecamp/trix" target="_blank" rel="noopener noreferrer">Trix</a> is Basecamp's rich text editor, bundled with Ruby on Rails as Action Text and widely used across web applications for WYSIWYG editing.</p>
+                                <p><strong>Issue:</strong> The editor failed to properly sanitize the <code>data-trix-attachment</code> attribute before rendering it as HTML, allowing attackers to inject malicious scripts through crafted attachments. When users interacted with these attachments, arbitrary JavaScript could execute in their browser session.</p>
+                                <p><strong>Impact:</strong> Stored XSS enabling session hijacking, unauthorized actions, and data theft in any application using vulnerable Trix versions (CVSS 4.6 MODERATE).</p>
+                                <p><strong>Resolution:</strong> Reported via HackerOne. Basecamp issued <a href="https://github.com/basecamp/trix/security/advisories/GHSA-g9jg-w8vm-g96v" target="_blank" rel="noopener noreferrer">security advisory GHSA-g9jg-w8vm-g96v</a> and released patched version 2.1.16 for both npm and RubyGems.</p>
                             </div>
                         </div>
                     </div>
@@ -486,21 +477,20 @@
                     <div class="results">
                         <h4>Results & Recognition</h4>
                         <ul>
-                            <li><strong>Both PRs merged within 3 hours</strong> by project maintainer</li>
-                            <li><strong>Comprehensive documentation</strong> explaining vulnerabilities, security impact, and technical implementation</li>
-                            <li><strong>Responsible disclosure</strong> to upstream iText project for coordinated patching</li>
-                            <li><strong>Zero breaking changes</strong> - security improvements with backward compatibility</li>
-                            <li><strong>Proactive security mindset</strong> - discovered through independent code review</li>
+                            <li><strong>Official security advisory issued</strong> by Basecamp acknowledging the discovery</li>
+                            <li><strong>Coordinated disclosure</strong> through HackerOne bug bounty platform</li>
+                            <li><strong>Patch released</strong> in Trix v2.1.16 protecting Rails applications globally</li>
+                            <li><strong>Credited as reporter</strong> in the GitHub security advisory</li>
                         </ul>
                     </div>
 
                     <div class="project-tech">
                         <span class="tech-tag">Security Research</span>
-                        <span class="tech-tag">Cryptography</span>
-                        <span class="tech-tag">CVE Remediation</span>
+                        <span class="tech-tag">XSS</span>
+                        <span class="tech-tag">HackerOne</span>
                         <span class="tech-tag">Open Source</span>
-                        <span class="tech-tag">C#</span>
-                        <span class="tech-tag">XML Security</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Ruby on Rails</span>
                     </div>
                 </div>
 
